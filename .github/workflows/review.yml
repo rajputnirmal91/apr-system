@@ -3,9 +3,11 @@ name: OpenAI PR Review
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+    paths:
+      - "Frontend/**"   
 
 jobs:
-  review:
+  frontend-review:
     runs-on: ubuntu-latest
 
     permissions:
