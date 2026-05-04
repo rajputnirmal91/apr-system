@@ -1,0 +1,26 @@
+// font family
+
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
+// variable initialize
+:root {
+  --font-family: 'Onest', sans-serif !important;
+  --primary: #179fbd;
+  --lightPrimary: #8bcfde;
+  --secondary: #f4fafb;
+  --white: #ffffff;
+  --border: #d1ecf2;
+  --secondaryLight: #d1ecf2;
+  --textDark: #001c22;
+  --textLight: #8e9c9f;
+  --success: #219653;
+  --lightBlue: #f3fafc;
+  --lightBg: #f2f2f2;
+  --danger: #dc3545;
+  --lightColor: #f3fafc;
+  --dangerLight: #eb5757;
+  --grey: #777777;
+  --lightGrey: #fafafa;
+  --lightBlue: #f4fbfc;
+  --alertColor: #f2994a;
+}

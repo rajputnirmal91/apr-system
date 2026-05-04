@@ -1,0 +1,423 @@
+.addNewGoalMain {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  .addNewGoalHead {
+    background-color: var(--lightBlue);
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 15px;
+  }
+
+  .doneBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .btnMargin {
+    margin: 22px 0px 0px 0px;
+  }
+
+  .deleteBtn {
+    border: 1px solid var(--danger);
+  }
+
+  .addMore:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .addGoal {
+    max-height: 350px;
+    overflow-y: auto;
+  }
+
+  .editGoal {
+    height: 120px;
+  }
+}
+
+.goal-mapping-modal .addNewGoalMain {
+  height: auto;
+}
+
+.goal-mapping-modal .addNewGoalMain .addGoal,
+.goal-mapping-modal .addNewGoalMain .editGoal {
+  height: auto;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.goal-mapping-modal .modal-body {
+  height: auto;
+  max-height: none;
+}
+
+.goal-mapping-modal .goalMappingBody {
+  padding: 16px;
+}
+
+.goal-mapping-modal .goalMappingInputRow {
+  align-items: flex-end;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.goal-mapping-modal .goalMappingInputField {
+  margin-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.goal-mapping-modal .addGoalInputField {
+  margin-bottom: 12px;
+  padding-left: 0px !important;
+  padding-right: 12px;
+}
+
+.goal-mapping-modal .goalMappingInputAction {
+  margin-bottom: 12px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.goal-mapping-modal .goalMappingAddButton {
+  white-space: nowrap;
+  height: 52px;
+  width: 100%;
+}
+
+.goal-mapping-modal .goalMappingTable {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.goal-mapping-modal .goalMappingTableHeader {
+  display: grid;
+  grid-template-columns: 5fr 5fr 2fr;
+  background-color: #d1ecf2;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: var(--textDark, #1c1c1c);
+}
+
+.goal-mapping-modal .goalMappingTableBody {
+  background-color: var(--lightBlue);
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.goal-mapping-modal .goalMappingRow {
+  display: grid;
+  grid-template-columns: 5fr 5fr 2fr;
+  align-items: center;
+  padding: 1px 0px;
+  border-top: 1px solid var(--border);
+  column-gap: 12px;
+}
+
+.goal-mapping-modal .goalMappingColText,
+.goal-mapping-modal .goalMappingColType {
+  padding: 0 12px;
+  min-width: 0;
+}
+
+.goal-mapping-modal .goalMappingColAction {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.goal-mapping-modal .goalMappingRowText {
+  font-size: 14px;
+  padding: 12px 14px;
+  border-radius: 4px;
+  min-height: 52px;
+  display: block;
+  line-height: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.goal-mapping-modal .goalMappingRowInput {
+  height: 52px;
+}
+
+.goal-mapping-modal .modal-content {
+  height: auto;
+  min-height: 0;
+}
+
+.goal-mapping-modal .modal-body {
+  flex: 0 0 auto;
+}
+
+.totalWeight {
+  color: var(--grey);
+
+  .percentage {
+    color: var(--primary);
+  }
+
+  .text-danger {
+    color: var(--danger);
+  }
+
+  .text-success {
+    color: var(--primary);
+  }
+}
+
+.userTableMain {
+  .permissionColumnWidth {
+    width: 30%;
+  }
+
+  .sortIcon {
+    padding: 6px 0px 0px 0px;
+  }
+
+  .editForm {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .updateGoal:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .iconMain {
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  .manageWeightage {
+    background-color: var(--lightBlue);
+    vertical-align: middle;
+
+    .text {
+      padding-top: 8px;
+      padding-left: 8px;
+    }
+  }
+
+  .manageWeightageTable {
+    tbody {
+      background-color: var(--primary);
+    }
+
+    thead {
+      border-bottom: 10px solid transparent;
+    }
+
+    tr.custom-row {
+      border-bottom: 1px solid var(--border);
+    }
+  }
+}
+
+.goalMapListPage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.goalName {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* Main input box */
+.custom-prime-dropdown .p-dropdown {
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 0.75rem;
+  font-size: 14px;
+  background-color: #ffffff;
+  min-height: 52px;
+  width: 100%;
+}
+
+/* Placeholder styling */
+.custom-prime-dropdown .p-dropdown-label.p-placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Dropdown arrow */
+.custom-prime-dropdown .p-dropdown-trigger {
+  color: #6b7280;
+}
+
+/* Dropdown panel (opened options) */
+.custom-prime-dropdown .p-dropdown-panel {
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: none;
+  overflow: hidden;
+}
+
+/* Option item */
+.custom-prime-dropdown .p-dropdown-item {
+  font-size: 14px;
+  color: #111827;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* Hover state */
+.custom-prime-dropdown .p-dropdown-item.p-highlight,
+.custom-prime-dropdown .p-dropdown-item:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+/* Remove last item border */
+.custom-prime-dropdown .p-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.goalList {
+  max-height: 550px;
+  overflow: auto;
+}
+
+.closeAddForm {
+  background-color: var(--lightBlue) !important;
+  color: #000000 !important;
+  // span {
+  //   font-family: Onest, Arial, Helvetica, sans-serif;
+  //   font-size: 16px;
+  //   font-weight: 600;
+  // }
+}
+
+.responsive-goal-actions {
+  @media (min-width: 992px) {
+    // lg and up
+    flex-wrap: nowrap;
+
+    >div:first-child {
+      flex-basis: auto !important;
+      margin-right: 12px;
+    }
+
+    >div:last-child {
+      flex-basis: auto !important;
+    }
+  }
+}
+
+.weightageBtn {
+  background-color: var(--white) !important;
+  width: 100%;
+  height: 50px;
+  padding: 0px 1px;
+
+  span {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Onest, Arial, Helvetica, sans-serif;
+  }
+
+  @media (max-width: 1523px) {
+    span {
+      font-size: 14px;
+    }
+  }
+}
+
+.doneBtn {
+  color: var(--white);
+  background-color: var(--primary);
+  border: 0px;
+  padding: 5px 20px;
+  border-radius: 4px;
+}
+
+.dropdown {
+  .p-dropdown {
+    width: 100%;
+    border-radius: 4px;
+    height: 52px;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--border);
+
+    .p-dropdown:not(:focus-within) {
+      border: 1px solid var(--border);
+    }
+
+    &.p-focus {
+      box-shadow: none !important;
+      border-color: var(--border) !important;
+    }
+
+    &:not(.p-disabled):hover {
+      border-color: var(--border);
+    }
+
+    .p-dropdown-label {
+      color: var(--textDark) !important;
+      font-style: normal;
+    }
+  }
+
+  .p-dropdown-panel {
+    border-color: var(--border) !important;
+    box-shadow: none !important;
+  }
+
+  .p-dropdown-items .p-dropdown-item.p-highlight,
+  .p-dropdown-items .p-dropdown-item.p-focus {
+    background-color: #e6f3ff !important;
+    color: #000 !important;
+  }
+}
+
+.custom-dropdown-panel {
+  .p-dropdown-items-wrapper {
+    .p-dropdown-items {
+      padding-left: 0px;
+      margin-top: 5px;
+      margin-bottom: -1px;
+
+      .p-dropdown-item {
+        margin-bottom: 1px;
+        padding: 10px 14px;
+        background-color: var(--lightGrey);
+
+        &:hover,
+        &.p-focus {
+          background-color: var(--lightGrey) !important;
+          color: inherit !important;
+          border-bottom: 1px solid var(--border);
+        }
+
+        &.p-highlight {
+          background: transparent !important;
+          color: inherit !important;
+        }
+
+        &.p-highlight.p-focus {
+          background-color: var(--lightGrey) !important;
+          color: inherit !important;
+        }
+      }
+    }
+  }
+}

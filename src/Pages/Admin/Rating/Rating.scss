@@ -1,0 +1,229 @@
+.rating-container {
+  padding: 24px;
+  min-height: 100%;
+
+  .page-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .search-input {
+    max-width: 200px;
+  }
+
+  .manage-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #d1d5db;
+    color: #0d6efd;
+  }
+
+  .no-goals {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6b7280;
+
+    .no-goals-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .no-goals-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .no-goals-sub {
+      font-size: 14px;
+      color: #9ca3af;
+    }
+  }
+
+  .add-goal-section {
+    background-color: #f9fafb;
+    border-radius: 8px;
+
+    .goal-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .error-text {
+      font-size: 12px;
+      color: #dc3545;
+      margin-top: 4px;
+    }
+  }
+
+  .nav-tabs {
+    .nav-link {
+      &.active,
+      &:hover {
+        background-color: var(--primary) !important;
+        border-radius: 4px;
+        color: var(--white) !important;
+      }
+
+      color: var(--textDark) !important;
+      background-color: var(--secondary) !important;
+    }
+
+    gap: 10px !important;
+  }
+
+  .goalSelectBox {
+    height: 52px;
+    border: 1px solid var(--border);
+
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  .addMoreBtn button {
+    width: 100%;
+  }
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+//for Rating list
+.RatingListWrapper {
+  & thead {
+    & th {
+      background-color: var(--secondaryLight);
+      font-weight: normal;
+    }
+  }
+
+  & td {
+    padding: 0px !important;
+
+    & input {
+      height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+  }
+
+  & tbody {
+    & span {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      min-width: 100% !important;
+      display: flex;
+    }
+
+    & span.text-ellipsis {
+      min-width: 0 !important;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    & span.text-ellipsis .overlay-text-trigger {
+      min-width: 0;
+      width: 100%;
+      display: block;
+      overflow: hidden;
+    }
+
+    & span.text-ellipsis p {
+      width: 100%;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    & td.ratingTextCell {
+      max-width: 0;
+      overflow: hidden;
+    }
+
+    & span.ratingTextEllipsis {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0 !important;
+      display: block !important;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    & span.ratingTextEllipsis .overlay-text-trigger {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0 !important;
+      display: block !important;
+      overflow: hidden;
+      padding: 0 !important;
+    }
+
+    & span.ratingTextEllipsis p.ratingTextOverlay {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.RatingListWrapperTabs {
+  .nav-link {
+    background-color: #e0eef1 !important;
+    color: var(--textDark) !important;
+    border-radius: 8px;
+  }
+
+  .nav-link.active {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+  }
+}
+
+.nav-tabs {
+  gap: 5px !important;
+}
+
+.dateTabTable th,
+.dateTabTable td {
+  height: 50px !important;
+}
+
+.table > :not(caption) > * > * {
+  padding: 0rem 0.5rem !important;
+}
+
+.rating-modal-sm {
+  max-width: 700px !important;
+  width: 700px !important;
+}
+
+.RatingListWrapper .manageWeightageTable th {
+  text-align: left;
+  vertical-align: middle;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.RatingListWrapper .manageWeightageTable th p {
+  margin: 0;
+}
+
+.RatingListWrapper {
+  & .table-responsive {
+    height: 96% !important;
+  }
+}

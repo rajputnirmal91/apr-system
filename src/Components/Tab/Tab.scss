@@ -1,0 +1,16 @@
+.simpleTabs {
+  margin-bottom: 70px;
+  .nav-tabs {
+    border-radius: 4px;
+    .nav-link {
+      &.active {
+        background-color: var(--primary) !important;
+        border-radius: 4px;
+        color: var(--white) !important;
+      }
+      color: var(--textDark) !important;
+      background-color: var(--secondary) !important;
+    }
+    gap: 10px;
+  }
+}

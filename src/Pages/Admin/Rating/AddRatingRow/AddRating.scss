@@ -1,0 +1,63 @@
+.checkBox {
+  width: 17px;
+  height: 17px;
+  &[type='checkbox'] {
+    accent-color: var(--primary);
+    &:hover {
+      accent-color: var(--primary);
+    }
+  }
+}
+
+.addNewRatingRow {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  .addNewGoalHead {
+    background-color: var(--lightBlue);
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 15px;
+  }
+
+  .doneBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  .btnMargin {
+    margin: 22px 0px 0px 0px;
+  }
+  .deleteBtn {
+    border: 1px solid var(--danger);
+  }
+  .addMore:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  .addGoal {
+    max-height: 350px;
+    overflow-y: auto;
+  }
+  .editGoal {
+    height: 120px;
+  }
+}
+
+// .rating-modal-sm .modal-dialog {
+//   max-width: 520px;
+// }
+
+// .rating-modal-sm .modal-content {
+//   min-height: 520px;
+// }
+
+.addNewGoalMain row {
+  height: 730px;
+}
+
+.addNewGoalMain .addGoal{
+height: 430px;
+max-height: 450px;
+}

@@ -1,0 +1,57 @@
+.irmProjectsTabWrapper {
+  min-height: calc(100vh - 216px);
+  .irmWrapper {
+    border: 1px solid var(--border);
+    margin: 20px 0px;
+    border-radius: 4px;
+    background-color: var(--white);
+
+    .irmHead {
+      background-color: var(--lightBlue);
+      padding: 15px 10px;
+      border-radius: 4px;
+    }
+
+    .irmImageMain {
+      height: 100px;
+      width: 100px;
+    }
+
+    .irmImage {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .borderBottom {
+    border-bottom: 1px solid var(--border);
+  }
+
+  & .commonTable {
+    & table {
+      border: 1px solid var(--border);
+    }
+    & .custom-table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      & .custom-td:nth-child(2) {
+        border-right: 1px solid var(--border);
+      }
+    }
+  }
+
+  & .ratingRemark {
+    display: flex;
+    width: 100%;
+
+    .ratingRemarkLeft {
+      flex: 0 0 20%; // fixed 20%
+      max-width: 20%;
+    }
+
+    .ratingRemarkRight {
+      flex: 1; // takes remaining 80%
+      max-width: 80%;
+    }
+  }
+}

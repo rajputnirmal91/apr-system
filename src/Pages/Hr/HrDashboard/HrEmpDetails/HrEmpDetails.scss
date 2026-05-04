@@ -1,0 +1,51 @@
+.empDetailsMainContainer {
+  display: flex;
+  flex-direction: column;
+
+  .hr-emp-scroll-area {
+    flex: 1;
+    padding-bottom: 16px;
+  }
+
+  .hr-emp-action-bar {
+    position: sticky;
+    bottom: 0;
+    border-top: 1px solid var(--border);
+    padding: 12px 0;
+    z-index: 10;
+  }
+
+  .employeeDetailsCard {
+    .employeeDetailsCardHeading {
+      padding: 16px;
+      @media (max-width: 1536px) {
+        padding: 12px;
+      }
+    }
+  }
+}
+
+.HrEmpDetailsBody {
+  .accordion {
+    max-height: 54vh;
+    overflow-y: auto;
+    @media (max-width: 1536px) {
+      max-height: 44vh;
+    }
+    & .pedpDetailsKra {
+      background-color: var(--secondaryLight);
+    }
+  }
+  & .table > :not(caption) > * > * {
+    padding: 4px !important;
+  }
+  .empDetailsMainContainer .coreCompetencyAccordion .equalWidthTable {
+    max-width: 100%;
+  }
+  .empDetailsMainContainer .coreCompetencyAccordion .equalWidthTable th {
+    background-color: transparent !important;
+  }
+  & .textAreaRemark {
+    min-height: 52px;
+  }
+}

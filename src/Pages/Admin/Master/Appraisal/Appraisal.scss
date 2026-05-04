@@ -1,0 +1,69 @@
+.form-check-input {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary) !important;
+  border: 1px solid var(--primary) !important;
+}
+
+.form-check-label {
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.custom-success-modal .modal-content {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 400px;
+  height: 280px;
+}
+
+.custom-success-modal .success-icon {
+  width: 100px;
+  height: 100px;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 28px;
+  color: var(--white);
+  position: absolute;
+  top: -34%;
+  left: 50%;
+  transform: translate(-50%, 5%);
+  border: 5px solid var(--white);
+  border-radius: 50%;
+}
+
+.custom-success-modal h5 {
+  font-weight: 600;
+}
+
+.custom-success-modal p {
+  margin: 10px 0 20px;
+  color: var(--textDark);
+}
+
+.ModalBtn {
+  width: 144px;
+  margin: auto;
+  height: 34px;
+  margin-bottom: -40px;
+}
+
+.success-banner {
+  background: #d8f3f8;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #222;
+}
+
+.success-banner img {
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,60 @@
+.commanStyle {
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.boxStyle {
+  width: 368px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.cardImage {
+  position: relative;
+  display: inline-block;
+  .Image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.serviceHead {
+  padding: 16px;
+  background-color: var(--lightColor);
+}
+
+.tableMain {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 16px 0;
+  th {
+    vertical-align: top;
+    padding: 15px 8px;
+  }
+
+  td {
+    vertical-align: top;
+    padding: 15px 8px;
+  }
+
+  .colStrengths {
+    width: 200px;
+  }
+  .colDevelopment {
+    width: 200px;
+  }
+  .colTraining {
+    width: 200px;
+  }
+  .colHours {
+    width: 100px;
+  }
+
+  .tableCell {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,33 @@
+@use '../../../assets/scss/mixins';
+
+.reportsContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: -16px !important;
+}
+
+.customReportsTable {
+  & .table-responsive {
+    max-height: calc(100vh - 296px);
+
+    .custom-table {
+      table-layout: fixed;
+      width: 100%;
+
+      @include mixins.table-typography;
+    }
+
+    .custom-table th,
+    .custom-table td {
+      width: 8.5%;
+      word-wrap: break-word;
+    }
+
+    .custom-table th:nth-child(2),
+    .custom-table td:nth-child(2) {
+      width: 15%;
+    }
+  }
+
+}

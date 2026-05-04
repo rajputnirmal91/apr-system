@@ -1,0 +1,100 @@
+// .add-email-template-form {
+.error-message {
+  font-size: 12px;
+  margin-top: 4px;
+  margin: 0px !important;
+}
+
+.quill-wrapper {
+  height: 250px;
+  max-height: 250px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.quill-view-mode {
+  opacity: 1;
+  border-radius: 4px;
+  padding: 8px;
+
+  .ql-toolbar,
+  .ql-container {
+    opacity: 0.6;
+  }
+
+  .ql-toolbar {
+    opacity: 0.45;
+  }
+
+  .ql-container {
+    background-color: #f7f7f7;
+    border-color: #dfe2e6;
+  }
+
+  .ql-container .ql-editor {
+    background: #f9f9f9;
+    color: #6c757d;
+    opacity: 0.9;
+    user-select: none;
+  }
+}
+
+.fixed-height-editor {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.fixed-height-editor .ql-toolbar {
+  flex: 0 0 auto;
+}
+
+.fixed-height-editor .ql-container {
+  height: calc(100% - 42px);
+  flex: 1 1 auto;
+  overflow: hidden !important;
+  border-radius: 4px;
+}
+
+.fixed-height-editor .ql-editor {
+  overflow-y: auto;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 16px;
+}
+
+.tags-area {
+  height: 240px;
+  margin-bottom: 12px;
+  margin-top: 4px;
+  overflow-y: auto;
+}
+
+.tag-chip {
+  padding: 6px 10px;
+  background: #eee;
+  border-radius: 6px;
+  margin-right: 6px;
+  cursor: grab;
+  gap: 4px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.tags-design {
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 0px;
+}
+
+// }
+
+// Override global min-height on quill inside this modal to prevent overflow
+.email-template-modal .rich-text-editor .ql-container,
+.email-template-modal .rich-text-editor .ql-editor {
+  min-height: unset;
+}

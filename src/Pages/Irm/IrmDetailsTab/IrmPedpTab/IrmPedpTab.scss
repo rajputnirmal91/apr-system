@@ -1,0 +1,151 @@
+.irmPedpTabContainer {
+  & .irmTabInnerContentBody {
+    max-height: 70vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  & .EmployeeDetailsLeft {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+  }
+
+  & .EmployeeDetailsRight {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px;
+
+    @media (max-width: 769px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 780px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  & .irmpedpCardBorder {
+    border: 1px solid var(--border) !important;
+    border-radius: 4px;
+  }
+
+  & .competencyDescriptionCard {
+    border: 1px solid var(--border);
+  }
+
+  & .coreCompetencyAccordion {
+    & .accordion {
+      max-height: 44vh !important;
+    }
+    & .accordion-item {
+      background-color: var(--white) !important;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    & .accordion-header {
+      background-color: var(--lightBlue);
+      button {
+        color: var(--textDark) !important;
+        font-weight: normal !important;
+      }
+    }
+
+    & .accordion-button {
+      height: 68px;
+    }
+
+    /*  TABLE STYLING */
+    & .equalWidthTable {
+      // border: 1px solid var(--border);
+      min-width: 1440px;
+      table-layout: fixed;
+      position: relative;
+      overflow-x: auto;
+      white-space: nowrap;
+      @media (max-width: 1360px) {
+        width: 1440px;
+      }
+
+      th,
+      td {
+        width: 30%; // 4 equal columns
+        word-wrap: break-word;
+        vertical-align: middle;
+        border: none !important;
+        padding: 12px;
+        white-space: normal; // allow text wrap inside cell
+
+        &:nth-child(1) {
+          width: 20%;
+        }
+
+        &:nth-child(3) {
+          width: 20%;
+        }
+      }
+
+      // thead::after {
+      //   content: '';
+      //   position: absolute;
+      //   left: 49%;
+      //   top: 0;
+      //   width: 2px;
+      //   height: 21%;
+      //   color: var(--primary);
+      //   border-right: 1px solid var(--primary);
+      //   background-color: var(--primary);
+      // }
+
+      th {
+        // background-color: var(--secondaryLight);
+        font-weight: normal !important;
+      }
+
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   left: 49%;
+      //   top: 0;
+      //   width: 2px;
+      //   height: 88%;
+      //   color: var(--primary);
+      //   border-right: 1px solid var(--border);
+      // }
+
+      /*  OPTIONAL SCROLLBAR STYLING */
+      &::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--border);
+        border-radius: 4px;
+      }
+    }
+
+    & .dropdown {
+      width: 100%;
+
+      & .p-dropdown {
+        height: 38px;
+      }
+    }
+
+    & .irmPedpCard {
+      border: 1px solid var(--border);
+    }
+  }
+
+  & .custom-dropdown {
+    width: 100%;
+  }
+}

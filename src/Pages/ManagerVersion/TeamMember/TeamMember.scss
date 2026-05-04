@@ -1,0 +1,24 @@
+.commanStyle {
+  background-color: var(--white);
+  border-radius: 4px;
+}
+.dashboard {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.managerDashboard {
+  height: 100%;
+
+  & .cardMainBox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}

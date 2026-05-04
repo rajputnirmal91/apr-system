@@ -1,0 +1,57 @@
+.emailTemplateContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .commonTable {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+.email-template {
+  table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  & .custom-table th:first-child,
+  .custom-table td:first-child {
+    width: 10% !important;
+  }
+
+  .custom-table th:last-child,
+  .custom-table td:last-child {
+    width: 10% !important;
+  }
+
+  .custom-table th:not(:first-child):not(:last-child),
+  .custom-table td:not(:first-child):not(:last-child) {
+    width: calc(80% / 3);
+  }
+
+  .table-responsive {
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: auto;
+
+    @media (max-width: 1700px) {
+      max-height: 74vh;
+    }
+
+    @media (max-width: 1536px) {
+      max-height: 69vh;
+    }
+    @media (max-width: 1280px) {
+      max-height: 58vh;
+    }
+  }
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+}

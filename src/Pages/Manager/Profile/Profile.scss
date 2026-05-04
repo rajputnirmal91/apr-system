@@ -1,0 +1,23 @@
+.profileWrapper {
+  border: 1px solid var(--border);
+  margin: 20px 0px;
+  border-radius: 4px;
+  background-color: var(--white);
+
+  .profileHead {
+    background-color: var(--lightBlue);
+    padding: 15px 10px;
+    border-radius: 4px;
+  }
+
+  .profileImageMain {
+    height: 100px;
+    width: 100px;
+  }
+
+  .profileImage {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}

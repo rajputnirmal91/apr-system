@@ -1,0 +1,98 @@
+.commonTable {
+  border-radius: 4px;
+}
+
+.sessionMasterPage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .commonTopSearch {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .commonTable {
+    flex: 1;
+    overflow-x: hidden;
+  }
+}
+
+.present-session-row {
+  background-color: #ecf6f8 !important;
+
+  td {
+    background-color: #ecf6f8 !important;
+  }
+}
+
+.transparentButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.custom-checkbox {
+  .form-check-input {
+    width: 20px !important;
+    height: 20px !important;
+    border: 2px solid #888 !important;
+    background-color: #fff !important;
+    cursor: pointer;
+
+    &:checked {
+      background-color: var(--primary) !important;
+      border: 2px solid var(--primary) !important;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+
+  .form-check-label {
+    margin-left: 10px;
+    margin-top: 2px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+  }
+}
+
+// Date picker styling
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 10px 40px 10px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+  }
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+}

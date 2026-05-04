@@ -1,0 +1,138 @@
+// IrmDetailsTab.scss
+.irmDetailsTabContainer {
+  & .irmDetailsTabs {
+    background-color: var(--white);
+    & .nav-link {
+      border-top-right-radius: 35px !important;
+      border-bottom-right-radius: 35px !important;
+    }
+
+    & .nav-link.active {
+      background-color: var(--primary) !important;
+    }
+  }
+}
+
+.unitHeadDetailsPageWrapper {
+  & .chain-tabs {
+    display: flex;
+    flex-direction: row;
+    // padding: 0px 13px;
+    @media (max-width: 1300px) {
+      flex-direction: column;
+      width: 100%;
+      gap: 16px;
+    }
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
+  }
+}
+
+.chain-tab {
+  position: relative;
+  padding: 10px 30px 10px 20px;
+  background-color: var(--white);
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--primary);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 15px) 0,
+    100% 50%,
+    calc(100% - 15px) 100%,
+    0 100%,
+    15px 50%
+  );
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.chain-tab.active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.chain-tab:hover {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+.first-tab {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 15px) 0,
+    100% 50%,
+    calc(100% - 15px) 100%,
+    0 100%,
+    0 50%
+  );
+}
+
+.last-tab {
+  position: relative;
+  padding: 10px 30px 10px 20px;
+  background-color: var(--white);
+  cursor: pointer;
+  font-weight: 500;
+  // color: var(--primary);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  width: 100%;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 0px) 0,
+    100% 50%,
+    calc(100% - 0px) 100%,
+    0 100%,
+    15px 50%
+  );
+  :active {
+    background-color: unset !important;
+  }
+  :hover {
+    background-color: unset !important;
+  }
+}
+
+.tabMain {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 1025px) {
+    width: 100%;
+  }
+}
+
+.dashboardDetailWrapper {
+  height: Calc(94vh - 5px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sticky Top */
+.dashboardStickyHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  // background: #fff;
+}
+
+/* Scrollable Middle */
+.dashboardScrollableContent {
+  // flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-top: 24px solid var(--lightBg);
+  // max-height: 76vh;
+}
+
+/* Sticky Bottom */
+.dashboardStickyFooter {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  // background: #fff;
+  padding-top: 12px;
+}

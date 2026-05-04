@@ -1,0 +1,26 @@
+.customEditDateModal {
+  & .modalHeading {
+    background-color: var(--lightBlue);
+  }
+
+  & .react-datepicker__input-container {
+    & .form-control {
+      width: 267px;
+      border: 1px solid var(--border);
+    }
+  }
+
+  & .table-borderless> :not(:first-child) {
+    border-top-width: 8px;
+    border-color: var(--white);
+  }
+
+  & .table-borderless> :not(caption)>*>* {
+    border-bottom-width: 1px;
+    border-color: var(--border);
+  }
+}
+
+.table-header {
+  height: 50px !important;
+}

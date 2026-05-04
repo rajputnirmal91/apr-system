@@ -1,0 +1,69 @@
+.sidebar-btn {
+  color: #444; /* default text color */
+  position: relative;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.sidebar-btn:hover {
+  color: var(--primary);
+}
+
+.active-nav {
+  background-color: var(--primary); /* blue background for active */
+  color: white !important; /* white text */
+  font-weight: 600;
+}
+
+.active-nav .sidebar-icon {
+  filter: brightness(0) invert(1); /* make icon white */
+}
+
+.active-nav::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  background-color: white; /* left indicator bar */
+  border-radius: 2px;
+}
+
+.sidebar-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Dropdown parent button active state — white icon + white arrow */
+.sidebar-parent-active {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-radius: 8px 8px 0 0;
+
+  .sidebar-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  .submenu-arrow img {
+    filter: brightness(0) invert(1);
+  }
+ 
+    & .activeHeading{
+      font-weight: 600;
+    }
+  
+}
+
+/* Expanded dropdown wrapper with border */
+.sidebar-dropdown-open {
+  background-color: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+
+  .subMenuList {
+    padding-bottom: 6px;
+  }
+}

@@ -1,0 +1,322 @@
+.layoutResponsive {
+  height: calc(100vh - 63px) !important;
+
+  @media (max-width: 768px) {
+    &.bg-light {
+      background-color: var(--primary) !important;
+    }
+    & {
+      height: 70px !important;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+  }
+}
+
+.sidebar {
+  height: calc(100vh - 63px);
+  overflow-y: auto;
+  background: linear-gradient(to bottom, #ecf7fa 0%, #ffffff 100%);
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 1050;
+    height: 100vh;
+    width: 100%;
+  }
+
+  &.open {
+    @media (max-width: 768px) {
+      transform: translateX(0);
+    }
+  }
+}
+
+.sideNavList {
+  margin-top: 26px;
+  @media (max-width: 769px) {
+    margin-top: 80px;
+  }
+}
+.sideNavList li {
+  max-width: 100%;
+  min-height: 52px;
+
+  & a {
+    color: var(--textDark);
+    min-height: 52px;
+    display: flex;
+    width: 100%;
+  }
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link:active {
+  background-color: var(--primary);
+  color: var(--white) !important;
+}
+
+.nav-link:hover {
+  background-color: transparent;
+  color: var(--textDark) !important;
+}
+
+.accordion-button {
+  background-color: transparent;
+  font-weight: 500;
+  box-shadow: none !important;
+  border: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--primary) !important;
+  // color: #ffffff !important;
+}
+
+.accordion-header.bg-primary {
+  background-color: transparent !important;
+}
+
+.accordion-item {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.accordion-body {
+  background-color: transparent !important;
+  padding-left: 1rem;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.sidebar-toggle {
+  background: var(--primary);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 8px;
+  left: 15px;
+  z-index: 1100;
+  border-radius: 4px;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.sidebar {
+  height: calc(100vh - 63px);
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 1050;
+    height: 100vh;
+    width: 100%;
+  }
+
+  &.open {
+    @media (max-width: 768px) {
+      transform: translateX(0);
+    }
+  }
+}
+
+.sideNavList {
+  margin-top: 26px;
+
+  @media (max-width: 769px) {
+    margin-top: 80px;
+  }
+
+  li {
+    max-width: 100%;
+    min-height: 52px;
+
+    a {
+      color: var(--textDark);
+      min-height: 52px;
+      display: flex;
+      width: 100%;
+    }
+  }
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+
+  &.active {
+    background-color: var(--primary);
+    color: white !important;
+  }
+}
+
+// Accordion Styling
+.accordion-item {
+  background-color: transparent !important;
+  border: none !important;
+  transition: background-color 0.3s ease;
+
+  &.open {
+    background-color: white !important;
+  }
+}
+
+.accordion-button {
+  background-color: transparent;
+  font-weight: 500;
+  box-shadow: none !important;
+  border: none;
+  color: var(--textDark);
+
+  &.collapsed {
+    background-color: transparent !important;
+  }
+
+  &:not(.collapsed) {
+    background-color: transparent !important;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.accordion-body {
+  background-color: transparent !important;
+  padding-left: 1rem;
+}
+
+.sidebar-toggle {
+  background: var(--primary);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 8px;
+  left: 15px;
+  z-index: 1100;
+  border-radius: 4px;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+// Employee Layout Style
+.employeeMain,
+.managerMain {
+  height: 100vh;
+  overflow: hidden;
+  @media (max-width: 769px) {
+    overflow: auto;
+  }
+}
+
+.layoutSidebar {
+  position: sticky;
+  top: 0px;
+  height: calc(100vh - 63px);
+  overflow-y: auto;
+  width: 80px;
+
+  .sidebar-icon {
+    margin: 0;
+  }
+}
+
+.layoutContent {
+  height: calc(100vh - 63px);
+  overflow-y: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar Button Styles - Shared across Admin and HR */
+.sidebar-btn {
+  color: #444;
+  position: relative;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.sidebar-btn:hover {
+  color: var(--primary);
+}
+
+.active-nav {
+  background-color: var(--primary);
+  color: white !important;
+  font-weight: 600;
+}
+
+.active-nav .sidebar-icon {
+  filter: brightness(0) invert(1);
+}
+
+.active-nav::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.sidebar-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.inactive-nav {
+  color: #444;
+}
+
+.sidebarHeight {
+  min-height: 52px;
+}
+
+.subMenuList {
+  padding-left: 0;
+  margin-top: 8px;
+}

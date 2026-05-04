@@ -1,0 +1,918 @@
+@use '../../../assets/scss/mixins';
+
+// ============================================================
+// Email Template Module — HR Design System
+// Font family and sizes are handled by global utility classes:
+//   fontOnest, font12, font14, font16, font400, font500, font600
+//   and var(--font-family) from _variables.scss
+// ============================================================
+
+.et-container {
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+// ============================================================
+// Tab Navigation
+// ============================================================
+
+.et-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.et-tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 10px 24px;
+  font-size: 14px; // matches .font14 global
+  font-family: var(--font-family);
+  color: var(--textLight);
+  cursor: pointer;
+  margin-bottom: -2px;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+  font-weight: 500;
+  text-transform: capitalize;
+
+  &:hover {
+    color: var(--primary);
+  }
+
+  &.et-tab-active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+    font-weight: 600;
+  }
+
+  @media (max-width: 576px) {
+    padding: 8px 14px;
+  }
+}
+
+.et-tab-content {
+  flex: 1;
+  min-height: 0;
+}
+
+// ============================================================
+// Step Indicator
+// ============================================================
+
+.et-step-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  @media (max-width: 576px) {
+    justify-content: flex-start;
+    padding: 0 4px;
+  }
+}
+
+.et-step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.et-step-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px; // intentionally small — step number
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--textLight);
+  background: var(--white);
+  flex-shrink: 0;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+
+  &.et-step-active {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: var(--white);
+  }
+  &.et-step-completed {
+    border-color: var(--success);
+    background: var(--success);
+    color: var(--white);
+  }
+}
+
+.et-step-label {
+  // uses .font14 + .fontOnest in JSX
+  white-space: nowrap;
+  color: var(--textLight);
+
+  &.et-step-label-active {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
+
+.et-step-connector {
+  width: 48px;
+  height: 2px;
+  background: var(--border);
+  margin: 0 4px;
+  flex-shrink: 0;
+  transition: background 0.2s;
+
+  &.et-connector-done {
+    background: var(--success);
+  }
+
+  @media (max-width: 576px) {
+    width: 20px;
+  }
+}
+
+// ============================================================
+// New Email Flow wrapper
+// ============================================================
+
+.et-new-flow {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.et-step-content {
+  flex: 1;
+  min-height: 0;
+}
+
+.et-step-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+// ============================================================
+// Panel Cards
+// ============================================================
+
+.et-panel-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 14px;
+  }
+}
+
+.et-panel-title {
+  // uses .font16 + .fontOnest + .font600 in JSX
+  color: var(--textDark);
+  margin-bottom: 16px;
+}
+
+.et-left-panel,
+.et-right-panel {
+  flex-direction: column;
+}
+
+// Both panel cards fill the col height
+.et-left-panel .et-panel-card,
+.et-right-panel .et-panel-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+// Left panel card — list scrolls inside, card does not grow beyond col height
+.et-left-panel .et-panel-card {
+  overflow: hidden;
+}
+
+.et-template-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  max-height: 62vh;
+  overflow-y: auto;
+
+  // subtle scrollbar
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+  @media (max-width: 1700px) {
+    max-height: 55vh;
+  }
+
+  @media (max-width: 1536px) {
+    max-height: 49vh;
+  }
+
+  @media (max-width: 1280px) {
+    max-height: 39vh;
+  }
+}
+
+.et-template-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--white);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 0.18s,
+    background 0.18s;
+
+  &:hover {
+    border-color: var(--primary);
+    background: var(--secondary);
+  }
+
+  &--active {
+    border-color: var(--primary);
+    background: var(--secondary);
+
+    .et-template-item__label {
+      color: var(--primary);
+      font-weight: 600;
+    }
+  }
+
+  &__label {
+    // uses .font14 + .fontOnest in JSX
+    color: var(--textDark);
+  }
+
+  &__check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+}
+
+// Preview panel
+.et-preview-value {
+  // uses .font14 + .fontOnest in JSX
+  color: var(--textDark);
+  margin: 0;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.et-preview-body-scroll {
+  overflow-y: auto;
+  max-height: 59vh;
+
+  @media (max-width: 1700px) {
+    max-height: 55vh;
+  }
+
+  @media (max-width: 1536px) {
+    max-height: 49vh;
+  }
+
+  @media (max-width: 1280px) {
+    max-height: 39vh;
+  }
+}
+
+.et-preview-body {
+  // uses .font14 + .fontOnest in JSX
+  color: var(--textDark);
+  white-space: pre-wrap;
+  background: var(--secondary);
+  border-radius: 6px;
+  padding: 14px;
+  line-height: 1.7;
+  margin-top: 4px;
+
+  &.et-preview-placeholder {
+    color: var(--textLight);
+  }
+}
+
+.et-preview-placeholder {
+  color: var(--textLight);
+}
+
+// ============================================================
+// Form Inputs
+// ============================================================
+
+.et-label {
+  // uses .font14 + .fontOnest + .font500 in JSX
+  color: var(--textDark);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.et-input {
+  // font handled by Bootstrap form-control + global body
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--textDark);
+
+  &:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(23, 159, 189, 0.15);
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: var(--lightBg);
+    color: var(--textLight);
+    cursor: not-allowed;
+  }
+}
+
+.et-textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+// ============================================================
+// Step Footer
+// ============================================================
+
+.et-step-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 20px;
+  margin-top: auto;
+  flex-shrink: 0;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    button {
+      width: 100%;
+    }
+  }
+}
+
+// ============================================================
+// User Selection — Step 2
+// ============================================================
+
+.et-user-select-body {
+  flex: 1;
+  min-height: 0;
+  & .table-responsive {
+    position: relative;
+  }
+}
+
+.et-user-list-panel {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 67vh;
+
+  @media (max-width: 1700px) {
+    max-height: 64vh;
+  }
+
+  @media (max-width: 1536px) {
+    max-height: 59vh;
+  }
+
+  @media (max-width: 1280px) {
+    max-height: 49vh;
+  }
+
+  & .custom-table {
+    height: 100%;
+  }
+
+  .table-responsive {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .custom-pagination {
+    height: 6vh;
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+    width: 100%;
+    background: var(--white);
+    position: relative !important;
+  }
+}
+
+.et-user-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  @include mixins.table-typography; // th: 16px→14px, td: 14px→12px
+
+  thead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--secondaryLight);
+  }
+
+  th,
+  td {
+    vertical-align: middle;
+    padding: 12px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  th {
+    font-weight: 500;
+    white-space: nowrap;
+    // span inside uses .fontOnest.font16 — handled by global classes
+  }
+
+  .th-check,
+  .td-check {
+    width: 8%;
+    text-align: center;
+
+    input[type='checkbox'] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: var(--primary);
+    }
+  }
+
+  .th-empid,
+  .td-empid {
+    width: 18%;
+    white-space: nowrap;
+  }
+  .th-name,
+  .td-name {
+    width: 29%;
+  }
+  .th-designation,
+  .td-designation {
+    width: 45%;
+  }
+
+  .custom-row {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .custom-td {
+    background-color: var(--white);
+    padding: 12px 10px !important;
+    // text uses .font14.font400.fontOnest.textDark — global classes
+  }
+
+  .custom-th {
+    background-color: var(--secondary);
+    padding: 12px 10px !important;
+    border: none;
+  }
+}
+
+.et-selected-designation-info {
+  text-align: right;
+  padding-right: 4px;
+
+  @media (max-width: 768px) {
+    text-align: left;
+    padding-left: 4px;
+    margin-top: 6px;
+  }
+}
+
+// ============================================================
+// Selected Users Panel
+// ============================================================
+
+.et-selected-panel {
+  max-height: 67vh;
+  height: 100%;
+  overflow-y: auto;
+  @media (max-width: 1700px) {
+    max-height: 64vh;
+  }
+
+  @media (max-width: 1536px) {
+    max-height: 59vh;
+  }
+
+  @media (max-width: 1280px) {
+    max-height: 49vh;
+  }
+}
+
+.et-selected-count {
+  // uses .font14 in JSX
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.et-selected-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.et-selected-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.et-selected-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.et-selected-name {
+  // font handled by .font14.font500.fontOnest.textDark in JSX
+  display: block;
+}
+
+.et-selected-designation {
+  color: var(--textLight);
+  display: block;
+}
+
+.et-remove-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// ============================================================
+// Review Card — Step 3
+// ============================================================
+
+.et-review-card {
+  max-width: 100%;
+  height: 100%;
+  max-height: 76vh;
+  overflow-y: auto;
+  @media (max-width: 1700px) {
+    max-height: 73vh;
+  }
+
+  @media (max-width: 1536px) {
+    max-height: 70vh;
+  }
+
+  @media (max-width: 1280px) {
+    max-height: 67vh;
+  }
+}
+
+.et-review-label {
+  // uses .font14.font600.fontOnest in JSX
+  color: var(--textLight);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.et-review-value {
+  // font handled by .font14.fontOnest.textDark in JSX
+  display: inline;
+}
+
+.et-review-body {
+  // uses .font14.fontOnest in JSX
+  color: var(--textDark);
+  white-space: pre-wrap;
+  background: var(--secondary);
+  border-radius: 6px;
+  padding: 14px;
+  line-height: 1.7;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.et-recipient-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 95px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.et-recipient-tag {
+  // uses .font12.fontOnest in JSX
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 12px;
+  color: var(--textDark);
+}
+
+// ============================================================
+// Success State
+// ============================================================
+
+.et-sent-success {
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.et-success-box {
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.et-success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--success);
+  color: var(--white);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.et-success-title {
+  // uses .font20.font600.fontOnest in JSX
+  color: var(--textDark);
+  margin-bottom: 8px;
+}
+
+// ============================================================
+// Email List — Sent / Draft
+// ============================================================
+
+.EmailListContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .table-responsive {
+    max-height: 69vh;
+    overflow-y: auto;
+    overflow-x: auto;
+
+    @media (max-width: 1700px) {
+      max-height: 68vh;
+    }
+    @media (max-width: 1537px) {
+      max-height: 61vh;
+    }
+    @media (max-width: 1281px) {
+      max-height: 54vh;
+    }
+  }
+
+  .commonTable {
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+  }
+
+  .custom-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    position: relative;
+
+    @include mixins.table-typography; // th: 16px→14px, td: 14px→12px
+
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: var(--secondary);
+    }
+
+    th,
+    td {
+      vertical-align: middle;
+      padding: 12px 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    th {
+      font-weight: 500;
+      white-space: nowrap;
+      // span inside uses .fontOnest.font16 — global classes
+    }
+
+    .th-from,
+    .td-from {
+      width: 15%;
+    }
+    .th-to,
+    .td-to {
+      width: 35%;
+    }
+    .th-subject,
+    .td-subject {
+      width: 35%;
+    }
+    .th-view,
+    .td-view {
+      width: 15%;
+      text-align: center;
+    }
+    .th-date,
+    .td-date {
+      width: 14%;
+      white-space: nowrap;
+    }
+    .th-status,
+    .td-status {
+      width: 18%;
+      text-align: center;
+    }
+    .th-action,
+    .td-action {
+      width: 18%;
+      text-align: center;
+    }
+
+    .custom-row {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .custom-td {
+      background-color: var(--white);
+      padding: 12px 10px !important;
+      // text uses .font14.font400.fontOnest.textDark — global classes
+    }
+
+    .custom-th {
+      background-color: var(--secondary);
+      padding: 12px 10px !important;
+      border: none;
+    }
+  }
+}
+
+// ============================================================
+// Continue to Complete button (Draft table)
+// ============================================================
+
+.et-continue-btn {
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  color: var(--primary);
+  padding: 5px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.18s,
+    color 0.18s;
+
+  &:hover {
+    background: var(--primary);
+    color: var(--white);
+  }
+}
+
+// ============================================================
+// Status Badges
+// ============================================================
+
+.et-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 14px;
+  border-radius: 20px;
+  font-size: 12px; // intentionally small badge text
+  font-weight: 500;
+  font-family: var(--font-family);
+  white-space: nowrap;
+}
+
+.et-status-sent {
+  background: rgba(33, 150, 83, 0.1);
+  color: var(--success);
+}
+.et-status-failed {
+  background: rgba(220, 53, 69, 0.1);
+  color: var(--danger);
+}
+.et-status-pending {
+  background: rgba(242, 153, 74, 0.1);
+  color: var(--alertColor);
+}
+.et-status-draft {
+  background: rgba(142, 156, 159, 0.1);
+  color: var(--textLight);
+}
+
+// ============================================================
+// Email View Modal
+// ============================================================
+
+.et-view-modal-dialog {
+  max-width: 680px;
+
+  .modal-content {
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.et-view-modal-header {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+
+  .btn-close {
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.et-view-modal-body {
+  padding: 24px 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+}

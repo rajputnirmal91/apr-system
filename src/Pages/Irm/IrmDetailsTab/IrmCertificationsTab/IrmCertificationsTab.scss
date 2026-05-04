@@ -1,0 +1,10 @@
+.certificationListCardWrapper {
+  min-height: calc(100vh - 216px);
+  & .certificationListWrapper {
+    height: 100%;
+    margin: auto;
+    & img {
+      max-width: 100%;
+    }
+  }
+}

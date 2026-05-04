@@ -1,0 +1,314 @@
+.add-btn {
+  border: none;
+  width: 100%;
+  height: 52px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.addNewKraMain {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  .addNewKraHead {
+    background-color: var(--lightBlue);
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 15px;
+  }
+
+  .doneBtn {
+    color: var(--white);
+    background-color: var(--primary);
+    border: 0px;
+    padding: 5px 20px;
+    border-radius: 4px;
+  }
+
+  .doneBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .addNewKraText {
+    font-family: Onest;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #001c22;
+  }
+
+  .btnMargin {
+    margin: 22px 0px 0px 0px;
+  }
+
+  .deleteBtn {
+    border: 1px solid var(--danger);
+  }
+
+  .addMore:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.kraWrapper {
+  border: 1px solid var(--border);
+  margin: 10px 0px;
+  border-radius: 4px;
+  background-color: var(--white);
+}
+
+.kraListMain {
+  border: 1px solid var(--border);
+  background-color: white;
+}
+
+.kraList {
+  display: flex;
+  background-color: var(--lightBlue);
+  padding: 10px 10px;
+  border-radius: 4px;
+}
+
+.subKraDetailMain {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin: 20px 8px 0px 8px;
+}
+
+.subKraDetail {
+  padding: 15px 10px;
+}
+
+.subKraDescription {
+  padding: 20px 10px;
+}
+
+.closeAddForm {
+  background-color: var(--lightBlue) !important;
+  color: #000000 !important;
+  border: 1px solid var(--border);
+}
+
+.subBtn {
+  width: unset;
+  padding: 0px 20px;
+}
+
+.deletePopUp {
+  z-index: 9999;
+}
+
+.kraForm {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.Kraborder {
+  border: 1px solid #9de0ef;
+}
+
+.Kraborder .kraList {
+  align-items: flex-start;
+}
+
+.Kraborder .subKraName {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.subKraIndex {
+  width: 18px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.subKraReadOnly {
+  background-color: transparent !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subKraReadOnlyWrapper .common-input {
+  background-color: transparent !important;
+  border: 0;
+  transition: none !important;
+}
+
+.subKraReadOnlyWrapper .input-field {
+  background-color: transparent !important;
+  transition: none !important;
+}
+
+.subKraInputRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subKraInputField {
+  flex: 1;
+}
+
+.subKraInputActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.KraFormModal {
+  & input,
+  & textarea {
+    height: 52px;
+    border: 1px solid var(--border);
+  }
+
+  & button {
+    height: 52px;
+  }
+
+  & .kraFormWrapper {
+    & .modal-header {
+      background-color: var(--lightBlue);
+
+      & .modelRatingHeading {
+        font-size: 16px;
+        font-weight: normal;
+      }
+    }
+
+    & .modal-body {
+      max-height: 280px;
+      overflow-y: auto;
+    }
+
+    & .modal-footer {
+      justify-content: flex-start;
+
+      & .common-button {
+        height: 34px;
+      }
+    }
+  }
+}
+
+.kraTopRow {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.kraNameField {
+  flex: 1;
+}
+
+.subKraHeaderRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.subKraHeaderLabel {
+  font-size: 14px;
+  color: var(--textDark, #1c1c1c);
+}
+
+.kraAddButton {
+  white-space: nowrap;
+}
+
+.kraPointsTable {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.kraPointsTableHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  background-color: #d1ecf2;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: var(--textDark, #1c1c1c);
+}
+
+.kraPointsTableBody {
+  background-color: var(--lightBlue);
+}
+
+.kraPointsRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  align-items: center;
+  padding: 1px 0px;
+  border-top: 1px solid var(--border);
+  column-gap: 12px;
+}
+
+.kraPointsColText {
+  padding-right: 12px;
+  min-width: 0;
+}
+
+.kraPointsColAction {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.kraRowInput {
+  width: 100%;
+  font-size: 14px !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.kra-error {
+  font-size: 14px;
+  margin-bottom: 4px !important;
+}
+
+.kra-name-wrapper {
+  margin-bottom: 16px;
+}
+
+.goal-details .kra-select-panel {
+  max-width: 1160px !important;
+}
+
+.kra-error {
+  padding: 5px 0px 0px 10px;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 115px);
+}
+
+.fixed-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.scrollable-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}

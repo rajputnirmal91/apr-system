@@ -1,0 +1,29 @@
+.irmHelpContainer {
+  & .customCard {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+  & .CompetenciesWrapper {
+    gap: 40px;
+  }
+  & .ratingKey {
+    border-top: 1px solid var(--border);
+    & li {
+      margin-bottom: 8px;
+      &::marker {
+        color: var(--primary);
+      }
+    }
+
+    & img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  & .RatingGuidAccordion {
+    & li {
+      color: var(--textLight);
+    }
+  }
+}

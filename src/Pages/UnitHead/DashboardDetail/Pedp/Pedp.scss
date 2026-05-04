@@ -1,0 +1,240 @@
+.card-icon {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+.pedpTable {
+  .custom-table {
+    border-spacing: 0px !important;
+    border: 1px solid var(--border);
+  }
+  .custom-td:nth-child(2) {
+    border-right: 1px solid var(--border);
+  }
+}
+.remarkSection {
+  border: 1px solid var(--border);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.remarkHeading {
+  border-top-right-radius: 10px;
+  background-color: var(--border);
+  border-top-left-radius: 10px;
+}
+.remark {
+  background-color: var(--white);
+}
+.careerDevelopement {
+  background-color: var(--border);
+}
+.pedpButton {
+  display: flex;
+  gap: 10px;
+  .closeBtn {
+    background-color: var(--white);
+    color: var(--primary);
+    :hover {
+      color: var(--white);
+    }
+  }
+}
+.appraiseInfo {
+  height: 100px;
+}
+
+.pedpUnitHeadWrapper {
+  border: 1px solid var(--border);
+  margin: 20px 0px;
+  border-radius: 4px;
+  background-color: var(--white);
+
+  .irmHead {
+    background-color: var(--lightBlue);
+    padding: 15px 10px;
+    border-radius: 4px;
+  }
+
+  .irmImageMain {
+    height: 100px;
+    width: 100px;
+  }
+
+  .irmImage {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .borderBottom {
+    border-bottom: 1px solid var(--border);
+  }
+}
+.untiHeadCustomAccordion {
+  & .accordion {
+    & .accordion-item {
+      background-color: var(--white) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 8px;
+      margin-bottom: 10px !important;
+      overflow: hidden;
+    }
+
+    & .accordion-header {
+      background-color: var(--lightBlue);
+      button {
+        color: var(--textDark) !important;
+        font-weight: normal !important;
+      }
+    }
+
+    & .accordion-button {
+      height: 68px;
+    }
+
+    /*  TABLE STYLING */
+    & .equalWidthTable {
+      border: 1px solid var(--border);
+      width: 100%;
+      table-layout: fixed;
+      position: relative; /* needed for pseudo-elements */
+
+      overflow-x: auto; /* horizontal scroll */
+      white-space: nowrap; /* prevent breaking columns */
+      @media (max-width: 1360px) {
+        width: 1440px;
+      }
+
+      th,
+      td {
+        width: 30%; // 4 equal columns
+        word-wrap: break-word;
+        vertical-align: middle;
+        border: none !important;
+        padding: 12px;
+        white-space: normal; // allow text wrap inside cell
+
+        &:nth-child(1) {
+          width: 20%;
+        }
+
+        &:nth-child(3) {
+          width: 20%;
+        }
+      }
+
+      thead::after {
+        content: '';
+        position: absolute;
+        left: 49%;
+        top: 0;
+        width: 2px;
+        height: 21%;
+        color: var(--primary);
+        border-right: 1px solid var(--primary);
+        background-color: var(--primary);
+      }
+
+      th {
+        background-color: var(--secondaryLight);
+        font-weight: normal !important;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 49%;
+        top: 0;
+        width: 2px;
+        height: 88%;
+        color: var(--primary);
+        border-right: 1px solid var(--border);
+      }
+
+      /*  OPTIONAL SCROLLBAR STYLING */
+      &::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--border);
+        border-radius: 4px;
+      }
+    }
+
+    & .dropdown {
+      width: 100%;
+
+      & .p-dropdown {
+        height: 38px;
+      }
+    }
+
+    & .irmPedpCard {
+      border: 1px solid var(--border);
+    }
+  }
+}
+
+.unitHeadEmpPedp {
+  & .employeeCardGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    & > div {
+      width: 100%;
+    }
+    & .commanStyle {
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    /* Responsive fallback */
+    @media (max-width: 1360px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .employee-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px 24px;
+  }
+
+  .profileImageMain {
+    min-width: 80px;
+    min-height: 80px;
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  /* Prevent text overflow */
+  .employee-info-grid > div {
+    min-width: 0;
+    word-break: break-word;
+  }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .employee-info-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .employee-info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  & .cardWithContentWrapper:last-child {
+    margin-bottom: 0px !important;
+  }
+}

@@ -1,0 +1,291 @@
+// .pedpMain {
+//   height: 80vh;
+//   overflow-y: scroll;
+//   overflow-x: hidden;
+// }
+
+.textArea {
+  resize: none !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease;
+  height: 50px !important;
+}
+
+.pedpMain {
+  --pedp-card-bg: var(--white);
+  --pedp-card-border: var(--border);
+  --pedp-muted: var(--textLight);
+  --pedp-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+  --pedp-radius: 12px;
+
+  .pedpMetaStrips {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+
+  .pedpInfoStrip,
+  .pedpDangerStrip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .pedpInfoStrip {
+    background: #dcf7d7;
+    border: 1px solid rgba(121, 240, 98, 0.35);
+    color: var(--textDark);
+  }
+
+  .pedpDangerStrip {
+    background: #fdecee;
+    border: 1px solid rgba(220, 53, 69, 0.35);
+    color: var(--textDark);
+  }
+
+  .kraWrapper {
+    background: var(--pedp-card-bg);
+    border: 1px solid var(--pedp-card-border);
+    border-radius: var(--pedp-radius);
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .kraList {
+    background-color: '#f3fafc';
+    border-bottom: 1px solid var(--pedp-card-border);
+    padding: 16px 12px;
+  }
+
+  .kraList h3 {
+    letter-spacing: 0.2px;
+  }
+
+  .categoryMain {
+    background: #fbfcfe;
+    margin: 12px 0 16px;
+  }
+
+  .categoryHead {
+    background: #eef2f6;
+    border-bottom: 1px solid var(--pedp-card-border);
+  }
+
+  .commonTable {
+    background: #ffffff;
+  }
+
+  .custom-table th,
+  .custom-table td {
+    vertical-align: top;
+    padding: 10px 8px !important;
+  }
+
+  .custom-table th {
+    color: var(--pedp-muted) !important;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .custom-td {
+    max-width: 260px;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .tableDropdown .dropdown .p-dropdown {
+    border-radius: 8px;
+  }
+
+  .textArea {
+    // min-height: 96px;
+    border-radius: 8px;
+    background: #ffffff;
+  }
+
+  .pedpDescription {
+    padding-bottom: 8px;
+  }
+}
+
+.serviceExcellence {
+  border: 1px solid var(--border);
+  margin: 20px 0px;
+  border-radius: 4px;
+  background-color: var(--white);
+}
+
+.tableDropdown {
+  .dropdown .p-dropdown {
+    height: 39px;
+  }
+  .dropdown .p-dropdown .p-dropdown-label {
+    font-size: 14px;
+  }
+}
+
+.kraList.pedpList {
+  padding: 12px 0px;
+}
+
+.headerSticker {
+  background-color: var(--lightBg);
+  position: fixed;
+  top: 100px;
+  width: calc(100vw - 20%);
+}
+
+.pedpDescription {
+  height: 71vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.borderNone {
+  border: none;
+}
+
+.goalsMain {
+  & .categoryMain {
+    padding: 15px;
+  }
+  .goalCategory {
+    border: 1px solid var(--border);
+    background-color: var(--white);
+  }
+  .categoryHead {
+    background-color: var(--border);
+  }
+  .goalsHead {
+    padding: 8px;
+    background-color: var(--lightColor);
+
+    @media (max-width: 1392px) {
+      padding: 8px;
+    }
+  }
+  & .pedpTable {
+    padding-bottom: 5px;
+  }
+}
+
+.textLight {
+  color: var(--textLight) !important;
+}
+
+.padding12 {
+  padding: 12px 0px;
+}
+
+.custom-table {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1440px) and (max-height: 900px) {
+  .pedpMain {
+    .kraWrapper {
+      margin-bottom: 14px;
+    }
+
+    .kraList {
+      padding: 12px 10px;
+    }
+
+    .categoryMain {
+      margin: 10px 0 14px;
+    }
+
+    .custom-table th,
+    .custom-table td {
+      padding: 8px 6px !important;
+    }
+
+    .custom-td {
+      max-width: 220px;
+    }
+
+    .textArea {
+      min-height: 84px;
+    }
+  }
+
+  .pedpDescription {
+    height: 68vh;
+  }
+}
+
+@media (max-width: 1366px) {
+  .pedpMain {
+    .kraList h3 {
+      font-size: 14px;
+    }
+
+    .custom-table th {
+      font-size: 12px;
+    }
+
+    .custom-table td {
+      font-size: 13px;
+    }
+
+    .tableDropdown .dropdown .p-dropdown {
+      height: 34px;
+    }
+
+    .tableDropdown .dropdown .p-dropdown .p-dropdown-label {
+      font-size: 12px;
+    }
+  }
+
+  .pedpDescription {
+    .kraList h3.font16 {
+      font-size: 14px;
+    }
+
+    .kraWrapper .p-4.font16 {
+      font-size: 14px;
+    }
+
+    .kraWrapper .p-4 p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .pedpMain {
+    .kraWrapper {
+      border-radius: 10px;
+    }
+
+    .custom-td {
+      max-width: 200px;
+    }
+  }
+
+  .pedpDescription {
+    height: 64vh;
+  }
+}
+
+table {
+  table-layout: fixed;
+}
+
+.tableDropdown {
+  width: 150px;
+}

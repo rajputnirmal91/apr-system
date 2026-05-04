@@ -1,0 +1,12 @@
+.cardWithContentWrapper {
+  border: 1px solid var(--border);
+  margin: 20px 0px;
+  border-radius: 4px;
+  background-color: var(--white);
+
+  .cardHead {
+    background-color: var(--lightBlue);
+    padding: 15px 10px;
+    border-radius: 4px;
+  }
+}

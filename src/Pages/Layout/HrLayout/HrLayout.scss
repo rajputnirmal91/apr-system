@@ -1,0 +1,11 @@
+.layoutMain.hrLayout {
+  @media (max-width: 768px) {
+    margin-top: -90px;
+  }
+}
+
+.layoutContent.hr-layout {
+  @media (max-width: 768px) {
+    height: initial;
+  }
+}

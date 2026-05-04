@@ -1,0 +1,17 @@
+// mapping style
+.mappingBtn {
+  height: 50px;
+  width: 100%;
+}
+
+// goal mapping style
+.checkBox {
+  width: 17px;
+  height: 17px;
+  &[type='checkbox'] {
+    accent-color: var(--primary);
+    &:hover {
+      accent-color: var(--primary);
+    }
+  }
+}

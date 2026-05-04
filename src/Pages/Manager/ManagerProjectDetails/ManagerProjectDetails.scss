@@ -1,0 +1,88 @@
+.managerProjectDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  & .accordionSectionWrapper {
+    min-height: 35vh;
+    overflow-y: auto;
+    & .managerProjectDetailsAccordion.accordion {
+      background-color: var(--lightBlue);
+      & .accordion-header {
+        display: flex;
+        align-items: center;
+        min-height: 68px;
+      }
+      & .accordion-button {
+        padding: 8px 24px !important;
+      }
+      & .accordion-body {
+        background-color: var(--white) !important;
+      }
+      & .accordionContentWrapper {
+        display: flex;
+        & .accordionContentLeft {
+          max-width: 10%;
+          flex-basis: 10%;
+        }
+        & .accordionContentRight {
+          max-width: 90%;
+          flex-basis: 90%;
+        }
+      }
+
+      & .accordion-collapse {
+        transition: height 0.4s ease;
+      }
+
+      &,
+      & .accordion-button {
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+        &::after {
+          background-image: url('/src/assets/images/DownArrow.svg') !important;
+          display: flex !important;
+          justify-content: space-between !important;
+        }
+      }
+    }
+  }
+
+  .projectSummaryCard {
+    background-color: var(--lightBlue);
+    border: 1px solid var(--border);
+  }
+
+  .status-dot {
+    display: inline-block;
+  }
+
+  .projectDetailsGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    background-color: var(--white);
+
+    // Responsive breakpoints
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  // & .common-input {
+  //   max-width: 350px !important;
+  // }
+  // & .shared-dropdown {
+  //   max-width: 238px !important;
+  // }
+}

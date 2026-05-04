@@ -1,0 +1,55 @@
+.dateTabTable {
+  .react-datepicker-popper {
+    z-index: 10;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  & th:first-child {
+    border-top-left-radius: 0px !important;
+  }
+
+  & th:last-child {
+    border-top-right-radius: 0px !important;
+  }
+
+  th,
+  td {
+    height: 54px;
+    vertical-align: middle !important;
+    padding: 8px 16px !important;
+  }
+
+  td {
+    display: table-cell !important;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .datePickerTd input {
+    width: 400px;
+    border: 1px solid var(--border);
+    height: 38px;
+    padding: 10px 8px;
+    border-radius: 4px;
+  }
+
+  & .datePickerTd .react-datepicker-wrapper input {
+    background: url('@project/assets/images/Calendar.svg') no-repeat right 8px center;
+    background-size: 18px;
+    padding-right: 35px;
+    cursor: pointer;
+  }
+
+  & thead {
+    border-bottom: 8px solid var(--light-gray);
+  }
+}
+
+.dateTab {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

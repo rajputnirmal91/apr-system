@@ -1,0 +1,19 @@
+.cardMain {
+  height: 100px;
+}
+
+.cardMainBox {
+  & .cardIcon {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+    max-width: 64px;
+    max-height: 64px;
+    background-color: var(--secondaryLight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+}

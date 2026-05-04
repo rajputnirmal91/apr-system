@@ -1,0 +1,139 @@
+.AddRatingForm {
+
+  & input,
+  & textarea {
+    height: 52px;
+    border: 1px solid var(--border);
+  }
+
+  & button {
+    height: 52px;
+  }
+
+  & .addRatingFormWrapper {
+    & .modal-header {
+      background-color: var(--lightBlue);
+
+      & .modelRatingHeading {
+        font-size: 16px;
+        font-weight: normal;
+      }
+    }
+
+    & .modal-body {
+      max-height: 280px;
+      overflow-y: auto;
+    }
+
+    & .modal-footer {
+      justify-content: flex-start;
+
+      & .common-button {
+        height: 34px;
+      }
+    }
+  }
+}
+
+.ratingPointsInputRow {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.ratingPointsInputField {
+  flex: 1;
+}
+
+.ratingPointsLabel {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--textDark, #1c1c1c);
+}
+
+.ratingPointsTextarea {
+  resize: none;
+}
+
+.ratingPointsAddButton {
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: 27px;
+}
+
+.ratingPointsTable {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ratingPointsTableHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 100px;
+  align-items: center;
+  background-color: #d1ecf2;
+  padding: 6px 16px;
+  font-size: 13px;
+  color: var(--textDark, #1c1c1c);
+}
+
+.ratingPointsHeaderText,
+.ratingPointsHeaderAction {
+  line-height: 3;
+  display: flex;
+  align-items: center;
+}
+
+.ratingPointsHeaderAction {
+  justify-content: flex-start;
+}
+
+.ratingPointsTableBody {
+  background-color: var(--lightBlue);
+}
+
+.ratingPointsRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  align-items: center;
+  padding: 1px 0px;
+  border-top: 1px solid var(--border);
+  column-gap: 12px;
+}
+
+.ratingPointsColText {
+  padding-right: 12px;
+  min-width: 0;
+}
+
+.ratingPointsColAction {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: start;
+  min-height: 52px;
+  gap: 12px;
+}
+
+.ratingPointsRowText {
+  font-size: 14px !important;
+  padding: 12px 14px;
+  border-radius: 4px;
+  min-height: 52px;
+  display: block;
+  line-height: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.ratingPointsRowInput {
+  width: 100%;
+}
+
+.errorMessagePadding {
+  padding: 5px 0px 0px 10px;
+}

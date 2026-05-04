@@ -1,0 +1,60 @@
+.cdpTableWrapper {
+  width: 100%;
+  overflow-x: auto; // enable scroll by default for safety
+  -webkit-overflow-scrolling: touch;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1440px;
+    thead {
+      & tr {
+        border: none;
+        border-color: transparent;
+        th {
+          background-color: var(--secondaryLight);
+          color: var(--textDark);
+          font-weight: normal;
+        }
+      }
+    }
+
+    tbody > tr:first-child {
+      border-top: 8px solid var(--white);
+    }
+
+    td {
+      vertical-align: middle;
+      background-color: var(--lightBlue);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-control {
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .text-danger {
+      font-size: 12px;
+      margin-top: 2px;
+    }
+  }
+
+  & .common-input,
+  & .common-button {
+    height: 40px !important;
+    display: flex;
+  }
+
+  .btn-info {
+    background-color: #009ec5;
+    border: none;
+    color: var(--white);
+    font-size: 14px;
+  }
+
+  .btn-outline-danger {
+    border-radius: 50%;
+    padding: 4px 6px;
+  }
+}

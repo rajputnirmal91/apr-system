@@ -1,0 +1,72 @@
+// ============================================================
+// Table Typography — matches HR Dashboard (CommonDashboard)
+// th: 16px → 14px @ ≤1536px
+// td: 14px → 12px @ ≤1536px
+// ============================================================
+@mixin table-typography {
+  th {
+    font-size: 16px;
+    font-weight: normal !important;
+    font-family: var(--font-family);
+    color: var(--textDark);
+
+    @media (max-width: 1536px) {
+      font-size: 14px;
+      font-weight: normal !important;
+    }
+  }
+
+  td {
+    font-size: 14px;
+    font-family: var(--font-family);
+
+    @media (max-width: 1536px) {
+      font-size: 12px;
+    }
+  }
+}
+
+// ============================================================
+// Card Typography — matches HR Dashboard summary cards
+// count: 40px → 30px → 25px
+// label: 14px
+// ============================================================
+@mixin card-typography {
+  .font40 {
+    font-size: 40px;
+
+    @media (max-width: 1536px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 1280px) {
+      font-size: 25px;
+    }
+  }
+
+  .font14 {
+    font-size: 14px;
+
+    @media (max-width: 1536px) {
+      font-size: 12px;
+    }
+  }
+}
+
+// ============================================================
+// List heading (e.g. "Employees", "Status Report")
+// 20px → 18px @ ≤1536px
+// ============================================================
+@mixin list-heading-typography {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-family);
+
+  @media (max-width: 1536px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 16px;
+  }
+}

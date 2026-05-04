@@ -1,0 +1,36 @@
+.sortButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.sortIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.custom-table.has-data {
+  height: auto !important;
+}
+
+.custom-row {
+  height: 52px;
+
+  td {
+    height: 52px;
+  }
+}
+
+.empty-state-row {
+  td {
+    height: 300px;
+    vertical-align: middle;
+  }
+}

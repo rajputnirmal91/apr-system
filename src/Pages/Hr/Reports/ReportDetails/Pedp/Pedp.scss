@@ -1,0 +1,66 @@
+.bgRadius {
+  background-color: var(--white);
+  border-radius: 4px;
+}
+
+.displayInfo {
+  gap: 40px;
+  padding: 24px 0px 0px 0px;
+
+  @media (max-width: 1392px) {
+    gap: 10px;
+  }
+}
+
+.displayEmployeeInfo1 {
+  gap: 125px;
+  @media (max-width: 1392px) {
+    gap: 10px;
+  }
+}
+
+.displayEmployeeInfo2 {
+  gap: 45px;
+  padding: 24px 0px 0px 0px;
+  @media (max-width: 1392px) {
+    gap: 10px;
+  }
+}
+
+.ratingMain {
+  background-color: var(--white);
+  border-radius: 4px;
+}
+
+.goalsMain {
+  & .categoryMain {
+    padding: 15px;
+  }
+  .goalCategory {
+    border: 1px solid var(--border);
+    background-color: var(--white);
+  }
+  .categoryHead {
+    background-color: var(--border);
+  }
+  .goalsHead {
+    padding: 8px;
+    background-color: var(--lightColor);
+
+    @media (max-width: 1392px) {
+      padding: 8px;
+    }
+  }
+  & .pedpTable {
+    padding-bottom: 5px;
+  }
+}
+
+.pedpTable {
+  & .tableMain {
+    td {
+      vertical-align: top;
+      padding: 0px 8px;
+    }
+  }
+}

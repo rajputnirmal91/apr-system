@@ -1,0 +1,104 @@
+// IrmDetailsTab.scss
+.irmDetailsTabMain {
+  height: 100%;
+}
+
+.irmDetailsTabContainer {
+  & .irmDetailsTabs {
+    background-color: var(--white);
+    & .nav-link {
+      border-top-right-radius: 35px !important;
+      border-bottom-right-radius: 35px !important;
+    }
+
+    & .nav-link.active {
+      background-color: var(--primary) !important;
+    }
+  }
+}
+
+.chain-tabs {
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.chain-tab {
+  position: relative;
+  padding: 10px 30px 10px 20px;
+  background-color: var(--border);
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--primary);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 15px) 0,
+    100% 50%,
+    calc(100% - 15px) 100%,
+    0 100%,
+    15px 50%
+  );
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.chain-tab.active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+// .chain-tab:hover {
+//   background-color: var(--primary);
+//   color: var(--white);
+// }
+
+.first-tab {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 15px) 0,
+    100% 50%,
+    calc(100% - 15px) 100%,
+    0 100%,
+    0 50%
+  );
+}
+
+.last-tab {
+  position: relative;
+  padding: 10px 30px 10px 20px;
+  background-color: var(--white);
+  cursor: pointer;
+  font-weight: 500;
+
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  width: 100%;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 0px) 0,
+    100% 50%,
+    calc(100% - 0px) 100%,
+    0 100%,
+    15px 50%
+  );
+  :active {
+    background-color: unset !important;
+  }
+  :hover {
+    background-color: unset !important;
+  }
+}
+
+.tabMain {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

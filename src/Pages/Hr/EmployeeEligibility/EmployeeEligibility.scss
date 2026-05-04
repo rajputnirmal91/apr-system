@@ -1,0 +1,282 @@
+@use '../../../assets/scss/mixins';
+
+/* ============================= */
+/* Card Style */
+/* ============================= */
+
+.commanStyle {
+  background-color: var(--white);
+  border-radius: 4px;
+}
+
+/* ============================= */
+/* Employee Eligibility Page */
+/* ============================= */
+
+.EmployeeEligibilityContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  // Match HR Dashboard card grid
+  .common-dashboardCard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 4px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .iconWrapper {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      border-radius: 50%;
+      background-color: var(--lightBlue);
+
+      @media (max-width: 1536px) {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+      }
+    }
+
+    .font40 {
+      @media (max-width: 1536px) {
+        font-size: 30px;
+      }
+
+      @media (max-width: 1280px) {
+        font-size: 25px;
+      }
+    }
+  }
+
+  /* ----------------------------- */
+  /* Table Responsive Wrapper */
+  /* ----------------------------- */
+
+  .table-responsive {
+    max-height: 55vh;
+    overflow-y: auto;
+    overflow-x: auto;
+
+    @media (max-width: 1700px) {
+      max-height: 51vh;
+    }
+
+    @media (max-width: 1537px) {
+      max-height: 44vh;
+    }
+
+    @media (max-width: 1281px) {
+      max-height: 32vh;
+    }
+  }
+
+  /* ----------------------------- */
+  /* Common Table Wrapper */
+  /* ----------------------------- */
+
+  .commonTable {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    & .custom-thead th:first-child {
+      max-width: max-content;
+      width: 5%;
+    }
+  }
+
+  /* ----------------------------- */
+  /* Custom Table */
+  /* ----------------------------- */
+
+  .custom-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    position: relative;
+
+    @include mixins.table-typography;
+
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #a8c6cc;
+    }
+
+    th,
+    td {
+      vertical-align: middle;
+      padding: 12px 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    th {
+      font-weight: 500;
+      white-space: nowrap;
+
+      span {
+        font-size: 16px;
+
+        @media (max-width: 1536px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 1067px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    /* ----------------------------- */
+    /* Column Width Distribution (100%) */
+    /* ----------------------------- */
+
+    .th-checkbox,
+    .td-checkbox {
+      width: 5%;
+      text-align: center;
+      white-space: nowrap;
+
+      input[type='checkbox'] {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        accent-color: var(--primary);
+      }
+    }
+
+    .th-emp-id,
+    .td-emp-id {
+      width: 7%;
+      white-space: nowrap;
+    }
+
+    .th-emp-name,
+    .td-emp-name {
+      width: 14%;
+      white-space: nowrap;
+    }
+
+    .th-designation,
+    .td-designation {
+      width: 16%;
+      white-space: nowrap;
+    }
+
+    .th-eligibility,
+    .td-eligibility {
+      width: 12%;
+      white-space: wrap;
+      text-align: center;
+    }
+
+    .th-reason,
+    .td-reason {
+      width: 26%;
+    }
+
+    .th-form-status,
+    .td-form-status {
+      width: 10%;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .th-action,
+    .td-action {
+      width: 10%;
+      white-space: nowrap;
+    }
+  }
+
+  /* ----------------------------- */
+  /* Editing Mode Cell */
+  /* ----------------------------- */
+
+  .editing-cell {
+    padding: 10px 0 !important;
+  }
+
+  /* ----------------------------- */
+  /* Bottom Legend Info */
+  /* ----------------------------- */
+
+  .bottomIconInfo {
+    background-color: var(--border);
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-top: 12px;
+    max-width: 100%;
+    position: static;
+    bottom: auto;
+  }
+
+  /* ----------------------------- */
+  /* Pagination */
+  /* ----------------------------- */
+}
+
+/* ============================= */
+/* Overlay Text */
+/* ============================= */
+
+.reason-text {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* Custom Tooltip */
+/* ============================= */
+
+.custom-tooltip {
+  .tooltip-inner {
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: left;
+  }
+
+  &.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: var(--primary);
+  }
+}
+
+/* ============================= */
+/* Responsive Improvements */
+/* ============================= */
+
+@media (max-width: 1200px) {
+  .custom-table {
+    font-size: 13px;
+
+    th span {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .custom-table {
+    font-size: 12px;
+  }
+}

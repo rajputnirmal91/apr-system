@@ -1,0 +1,93 @@
+.custom-header {
+  min-height: 63px;
+
+  & .roleDropdown {
+    & .shared-dropdown__input {
+      min-width: 100px;
+      display: flex;
+      gap: 8px;
+      border: none;
+    }
+  }
+}
+
+.vr.custom-vr {
+  background-color: var(--textDark);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .headerTitle {
+    display: none;
+  }
+}
+
+.profileDropdown {
+  position: absolute;
+  background-color: var(--white);
+  top: calc(100% + 25px);
+  right: 0;
+  min-width: 140px;
+  z-index: 9999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.headerDropdownWrapper {
+  position: relative;
+}
+
+.profileItem {
+  border-bottom: 1px solid var(--border);
+  padding: 8px 20px;
+}
+
+.profileItemTextActive {
+  color: var(--primary);
+  font-weight: 800 !important;
+}
+
+.selectedSessionText {
+  font-weight: 800;
+}
+
+.yearDropdown {
+  min-width: 170px;
+  max-height: 205px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.roleDropdown {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .profileDropdown {
+    min-width: 132px;
+    max-width: min(220px, 85vw);
+  }
+
+  .yearDropdown {
+    min-width: 148px;
+  }
+
+  .roleDropdown {
+    right: 0;
+  }
+}
+
+.avatar-initials {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}

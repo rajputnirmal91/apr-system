@@ -1,0 +1,75 @@
+.hrDashboard {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+
+  .commonTopSearch {
+    .customTopBarSearch {
+      .custom-dropdown {
+        width: 71% !important;
+
+        .p-dropdown {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .common-dashboardCard {
+    grid-template-columns: repeat(4, 1fr) !important;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr !important;
+    }
+
+    .card-body {
+      h4 {
+        @media (max-width: 1536px) {
+          font-size: 30px;
+        }
+
+        @media (max-width: 1280px) {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+
+  & .noRecordImageWrapper {
+    & .noRecordContainer {
+      & h3 {
+        @media (max-width: 1536px) {
+          font-size: 20px;
+        }
+
+        @media (max-width: 1280px) {
+          font-size: 18px;
+        }
+      }
+
+      & p {
+        @media (max-width: 1536px) {
+          font-size: 14px;
+          margin-top: 0px;
+        }
+      }
+
+      @media (max-width: 1536px) {
+        max-width: 300px;
+      }
+
+      @media (max-width: 1280px) {
+        max-width: 230px;
+      }
+    }
+  }
+
+}
+
+body .custom-dropdown-panel1 {
+  left: 733px !important;
+}

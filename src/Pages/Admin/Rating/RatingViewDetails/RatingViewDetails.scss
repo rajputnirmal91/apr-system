@@ -1,0 +1,66 @@
+.viewRatingDetailsWrapper {
+  & .modal-header {
+    background-color: var(--lightBlue);
+    color: var(--textDark);
+  }
+
+  & .modal-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--textDark);
+    font-family: var(--font-family);
+  }
+
+  & .modal-body {
+    font-size: 16px;
+    color: var(--textDark);
+    font-family: var(--font-family);
+  }
+}
+
+.ratingViewModal .modal-content {
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ratingViewModal .viewRatingDetailsWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.ratingViewModal .modal-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.ratingViewModal .modal-body p,
+.ratingViewModal .modal-body li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.ratingViewModal .modal-header .modal-title {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.ratingViewModal .modal-header .ratingViewTitle {
+  display: block;
+}
+
+.ratingViewModal .modal-header .ratingViewScore {
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.ratingViewModal .modal-header .ratingViewText {
+  display: inline;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

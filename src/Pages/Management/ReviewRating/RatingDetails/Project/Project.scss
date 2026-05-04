@@ -1,0 +1,27 @@
+.unitHeadProject {
+  border: 1px solid var(--border);
+  margin: 20px 0px;
+  border-radius: 4px;
+  background-color: var(--white);
+
+  .irmHead {
+    background-color: var(--lightBlue);
+    padding: 15px 10px;
+    border-radius: 4px;
+  }
+
+  .irmImageMain {
+    height: 100px;
+    width: 100px;
+  }
+
+  .irmImage {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .borderBottom {
+    border-bottom: 1px solid var(--border);
+  }
+}

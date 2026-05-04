@@ -1,0 +1,424 @@
+.master-container {
+  .top-header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 20000;
+  }
+
+  .tab-placeholder {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.goalsAssociatonAcordion {
+
+  & .accordion-item,
+  & .accordion-header {
+    border-radius: 4px !important;
+  }
+}
+
+.goal-card {
+  background: var(--lightBlue);
+  border-top: 1px solid var(--secondaryLight);
+  border-left: 1px solid var(--secondaryLight);
+  border-right: 1px solid var(--secondaryLight);
+  border-bottom: 1px solid var(--secondaryLight);
+  // padding: 7px 20px;
+  border-radius: 8px;
+
+  display: flex;
+  // flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  position: relative;
+  // z-index: 9999;
+  .goal-title {
+    color: var(--textDark);
+    flex: 1 1 auto;
+    min-width: 200px;
+  }
+
+  .goal-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    @media (max-width: 768px) {
+      .statusBox {
+        & span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .expand-btn {
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    &.small {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .goal-controls {
+    display: flex;
+    align-items: center;
+    // flex-wrap: wrap;
+    padding-right: 20px;
+    gap: 12px;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    min-width: 260px;
+    @media (max-width: 768px) {
+      min-width: unset;
+      max-width: 100%;
+    }
+  }
+
+  .vr {
+    width: 1px;
+    height: 16px;
+    background-color: #ccc;
+    align-self: center;
+  }
+
+  .dropdown-wrapper {
+    min-width: 220px;
+    flex: 1 1 auto;
+    position: relative;
+    z-index: 9999;
+    // z-index: auto;
+  }
+
+  // 📱 Responsive behavior for smaller screens
+  @media (max-width: 768px) {
+    // flex-direction: column;
+    align-items: stretch;
+
+    .goal-controls {
+      // flex-direction: column;
+      // align-items: flex-start !important;
+      width: 100%;
+    }
+
+    .dropdown-wrapper {
+      width: 100%;
+      min-width: unset;
+    }
+
+    .vr {
+      display: none;
+    }
+
+    #shared-dropdown-input {
+      padding-left: 0;
+    }
+  }
+}
+
+.goal-details {
+  // border: 1px solid var(--secondaryLight);
+  border-top: none;
+  // padding: 16px 20px 20px;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  position: relative;
+  margin-top: -4px;
+
+  .section-title {
+    color: var(--textDark);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .kra-dropdown {
+    max-width: 480px;
+  }
+
+  .kra-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 12px;
+    border: 1px solid #d1dee4;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  .kra-selected {
+    background: #f2fafd;
+    border: 1px solid #e6f1f5;
+    border-radius: 6px;
+    padding: 10px 12px;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .kra-select-panel {
+    max-width: 480px !important;
+    background: var(--lightGrey);
+    border: 1px solid #e6f1f5;
+    border-radius: 6px;
+    box-sizing: border-box;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .kraDropdownListItem {
+    max-height: 228px;
+    overflow: auto;
+  }
+
+  .selectable-item {
+    border-top: 1px solid #e6f1f5;
+    cursor: pointer;
+    .sub-kra-item {
+      display: flex;
+      align-items: center;
+      grid-gap: 10px;
+    }
+    input {
+      min-width: 16px;
+      height: 16px;
+      &[type='checkbox'] {
+        accent-color: var(--primary);
+        &:hover {
+          accent-color: var(--primary);
+        }
+      }
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .sub-kra-wrapper {
+    max-width: 960px;
+  }
+
+  .sub-kra-panel {
+    background: #f8fcfd;
+    border: 1px solid #e6f1f5;
+    border-radius: 6px;
+    margin-bottom: 18px;
+
+    .sub-kra-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 12px;
+      cursor: pointer;
+      border-top: 1px solid #e6f1f5;
+
+      &:first-child {
+        border-top: none;
+      }
+
+      input {
+        margin-top: 4px;
+      }
+    }
+
+    .sub-kra-actions {
+      display: flex;
+      gap: 10px;
+      padding: 12px;
+    }
+  }
+  .hrw-100 {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    color: var(--primary);
+  }
+  .mt-40 {
+    margin-top: 40px;
+  }
+}
+
+.goalsHeaderDropDown div {
+  border: none;
+  background: transparent;
+  color: var(--textDark);
+}
+
+.kra-accordion-list {
+  .kra-accordion-item {
+    // background-color: #f3fafc;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    .kra-accordion-item-wrapper {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+  }
+  .subkra-wrapper {
+    background-color: var(--lightGrey);
+    padding: 20px;
+    position: relative;
+  }
+  .kra-subkras {
+    background-color: #ffffff;
+    border-bottom: 1px var(--border) solid;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-radius: 0 0 4px 4px;
+    padding: 12px;
+    position: relative;
+    z-index: 9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    &.expanded {
+      max-height: 1000px;
+      overflow: visible;
+    }
+  }
+
+  .kra-header-left {
+    padding-left: 10px;
+  }
+  .kra-header-right {
+    display: flex;
+    grid-gap: 25px;
+    height: 100%;
+    align-items: center;
+    height: 50px;
+    padding-right: 10px;
+    .statusBox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    & button {
+      border: none;
+      background-color: transparent;
+    }
+    & .vr {
+      max-height: 20px;
+      margin: auto;
+    }
+  }
+  .sub-kra-item {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+    input {
+      min-width: 16px;
+      height: 16px;
+      &[type='checkbox'] {
+        accent-color: var(--primary);
+        &:hover {
+          accent-color: var(--primary);
+        }
+      }
+    }
+  }
+}
+
+.savedItemBox {
+  border: 1px solid var(--border);
+  .saved-item-card {
+    border-top: none !important;
+    border-top-left-radius: unset !important;
+    border-top-right-radius: unset !important;
+  }
+}
+
+.customSearch {
+  height: 100%;
+  &::placeholder {
+    color: var(--textDark) !important;
+    opacity: 1;
+  }
+}
+
+.customSearch.subkraDropdownSearch {
+  max-width: 370px !important;
+}
+
+.AccordionWrapper {
+  .top-search-wrapper {
+    position: sticky;
+    top: 58px;
+    z-index: 19999;
+  }
+
+  & .accordion {
+    & .accordion-header {
+      z-index: 1 !important;
+    }
+
+    & .accordion-item {
+      overflow: visible !important;
+      margin-bottom: 10px !important;
+    }
+  }
+}
+
+.goal-association-complete {
+  border-radius: 4px;
+  background-color: var(--white);
+  margin-top: -5px;
+  padding: 10px;
+  & .kra-section {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    & .kra-header {
+      background-color: var(--border);
+      width: 100%;
+      padding: 5px 10px;
+      border-radius: 0px !important;
+      color: var(--textDark);
+      font-weight: normal;
+    }
+  }
+  @media (max-width: 1060px) {
+    margin-top: -68px;
+  }
+}
+
+.form-published-warning {
+  display: inline-block;
+  padding: 8px 14px;
+  margin-bottom: 10px;
+  background-color: var(--white);
+  border-left: 3px solid var(--danger);
+  border-radius: 4px;
+  color: var(--danger);
+  font-weight: 500;
+  max-width: 100%;
+  width: 100%;
+}
+
+.top-search-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 5px 0;
+}
+
+.GoalListWrapper {
+  max-height: 60vh;
+  overflow: auto;
+}

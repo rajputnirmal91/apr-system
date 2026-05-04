@@ -1,0 +1,85 @@
+.manager-dashboard {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px; // small side padding for smaller screens
+
+  // Fixed 1280px width between 1280px and 1440px
+  @media (max-width: 1440px) {
+    max-width: 1280px;
+  }
+
+  // Beyond 1440px — make it fluid (full width)
+  @media (min-width: 1441px) {
+    max-width: 100%;
+  }
+
+  .summary-card {
+    border: none;
+    border-radius: 12px;
+    height: 100%;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .status-pill {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  & .table-responsive {
+    max-height: 69vh !important;
+    @media (max-width: 1440px) {
+      max-height: 500px !important;
+    }
+    & th {
+      background-color: var(--lightPrimary);
+      font-weight: normal;
+      font-family: var(--font-family);
+      color: var(--textDark);
+    }
+    & tr {
+      border-color: var(--border);
+    }
+    & td {
+      height: 52px;
+    }
+  }
+
+  & .custom-pagination {
+    width: calc(100% - 24px);
+  }
+}
+
+.managerProjectTopBox {
+  max-width: 20% !important;
+  flex-basis: 20% !important;
+  @media (max-width: 1366px) {
+    max-width: 25% !important;
+    flex-basis: 25% !important;
+  }
+  @media (max-width: 768px) {
+    max-width: 100% !important;
+    flex-basis: 100% !important;
+  }
+}
