@@ -21,13 +21,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run PR Review
-        id: review
-        uses: rajputnirmal91/openai-pr-reviewer@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          ai-api-key: ${{ secrets.AI_API_KEY }}
-        continue-on-error: true
-
-      - name: Check review status
-        run: |
-          echo "✅ PR review workflow completed"
+        uses: openai/openai-pr-reviewer@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
