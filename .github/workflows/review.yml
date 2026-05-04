@@ -1,0 +1,36 @@
+name: OpenAI PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run PR Review
+        id: review
+        uses: rajputnirmal91/openai-pr-reviewer@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          ai-api-key: ${{ secrets.AI_API_KEY }}
+
+      # IMPORTANT: This ensures GitHub properly marks failure
+      - name: Verify review result
+        if: failure()
+        run: |
+          echo "❌ PR review failed"
+          exit 1
+
+      - name: Success message
+        if: success()
+        run: |
+          echo "✅ PR review completed successfully"
