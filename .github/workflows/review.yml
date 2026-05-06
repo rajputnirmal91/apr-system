@@ -3,11 +3,13 @@ name: OpenAI PR Review
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-    paths-ignore:
+    paths:
+      - "Frontend/**"
       - "Backend/**"   
 
 jobs:
   frontend-review:
+    if: contains(github.event.pull_request.files[*].filename, 'Frontend/')
     runs-on: ubuntu-latest
 
     permissions:
@@ -31,3 +33,11 @@ jobs:
       - name: Check review status
         run: |
           echo "✅ PR review workflow completed"
+
+  backend-check:
+    if: contains(github.event.pull_request.files[*].filename, 'Backend/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Backend check passed
+        run: |
+          echo "✅ Backend changes - no review needed"
