@@ -127,7 +127,7 @@ function AccessPermission() {
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick)
     }
-  }, [selectedEmployee,showUnsavedModal,showUnsavedModal,hasUnsavedChanges,hasUnsavedChanges])
+  }, [selectedEmployee,showUnsavedModal,showUnsavedModal,hasUnsavedChanges])
 
   const handleEmployeeSelect = (employeeId: string) => {
     if (hasUnsavedChanges && employeeId !== selectedEmployee) {
