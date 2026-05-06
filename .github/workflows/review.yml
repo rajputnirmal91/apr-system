@@ -3,11 +3,6 @@ name: OpenAI PR Review
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-    paths:
-      - "Frontend/**"
-      - "Backend/**"   
-    paths-ignore:
-    - ".github/workflows/review.yml"
 
 jobs:
   frontend-review:
@@ -20,24 +15,22 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Check frontend changes
+        id: changes
+        uses: dorny/paths-filter@v3
         with:
-          fetch-depth: 0
+          filters: |
+            frontend:
+              - 'Frontend/**'
 
       - name: Run PR Review
-        id: review
+        if: steps.changes.outputs.frontend == 'true'
         uses: rajputnirmal91/openai-pr-reviewer@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           ai-api-key: ${{ secrets.AI_API_KEY }}
-        continue-on-error: true
 
-      - name: Check review status
-        run: |
-          echo "✅ PR review workflow completed"
-
-  backend-check:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Backend check passed
-        run: |
-          echo "✅ Backend changes - no review needed"
+      - name: Skip message
+        if: steps.changes.outputs.frontend != 'true'
+        run: echo "No frontend changes, skipping review"
