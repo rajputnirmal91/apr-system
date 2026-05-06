@@ -124,10 +124,10 @@ function AccessPermission() {
 
     document.addEventListener('mousedown', handleOutsideClick)
     // eslint-disable-next-line consistent-return
-    return () => {
-      document.removeEventListener('mousedown', handleOutsideClick)
-    }
-  }, [selectedEmployee,showUnsavedModal,showUnsavedModal,hasUnsavedChanges,hasUnsavedChanges])
+    // return () => {
+    //   document.removeEventListener('mousedown', handleOutsideClick)
+    // }
+  }, [selectedEmployee,showUnsavedModal,showUnsavedModal,hasUnsavedChanges])
 
   const handleEmployeeSelect = (employeeId: string) => {
     if (hasUnsavedChanges && employeeId !== selectedEmployee) {
