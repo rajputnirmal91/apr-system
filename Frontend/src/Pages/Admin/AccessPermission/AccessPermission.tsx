@@ -32,7 +32,7 @@ function AccessPermission() {
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [itemsPerPage, setItemsPerPage] = useState<number>(10)
   const [search, setSearch] = useState<string>('')
-  const debouncedSearch = useDebounce(search, 500)
+  // const debouncedSearch = useDebounce(search, 500)
 
   // const { data } = useGetRoleMasterListQuery({
   //   page: currentPage,
