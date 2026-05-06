@@ -34,13 +34,13 @@ function AccessPermission() {
   const [search, setSearch] = useState<string>('')
   const debouncedSearch = useDebounce(search, 500)
 
-  const { data } = useGetRoleMasterListQuery({
-    page: currentPage,
-    limit: itemsPerPage,
-    search: debouncedSearch || null,
-    order_by: 'asc',
-    sort_by: 'name',
-  })
+  // const { data } = useGetRoleMasterListQuery({
+  //   page: currentPage,
+  //   limit: itemsPerPage,
+  //   search: debouncedSearch || null,
+  //   order_by: 'asc',
+  //   sort_by: 'name',
+  // })
   const [addRoleMaster, { isLoading: isSaving }] = useAddRoleMasterMutation()
   const [updateRoleMaster, { isLoading: isUpdating }] =
     useUpdateRoleMasterMutation()
