@@ -6,6 +6,8 @@ on:
     paths:
       - "Frontend/**"
       - "Backend/**"   
+    paths-ignore:
+    - ".github/workflows/review.yml"
 
 jobs:
   frontend-review:
