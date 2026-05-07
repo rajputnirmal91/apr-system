@@ -1,0 +1,112 @@
+// TestComponent.scss with intentional styling issues
+
+// BUG 1: Unused CSS rule
+.unused-class {
+  color: blue;
+  font-size: 16px;
+}
+
+// BUG 2: Hardcoded colors instead of using design tokens
+.test-component {
+  background-color: #FF5733;
+  color: #2E86AB;
+  padding: 20px;
+  
+  h1 {
+    color: #A23B72;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  // BUG 3: Overly specific selector causing maintainability issues
+  div > ul > li > span > a {
+    color: #F18F01;
+    text-decoration: none;
+    
+    &:hover {
+      color: #C73E1D;
+      text-decoration: underline;
+    }
+  }
+
+  // BUG 4: Missing focus state for accessibility
+  button {
+    background-color: #06A77D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #048A5C;
+    }
+    
+    // Missing &:focus state
+  }
+
+  // BUG 5: Duplicate styles that should be consolidated
+  .user-card {
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .user-item {
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  // BUG 6: Insufficient color contrast (accessibility issue)
+  .error-message {
+    color: #FF6B6B;
+    background-color: #FFE5E5;
+    padding: 10px;
+  }
+
+  // BUG 7: Improper use of !important
+  .highlight {
+    color: red !important;
+    font-weight: bold !important;
+  }
+
+  // BUG 8: Missing responsive design
+  .user-list {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    
+    // No media queries for mobile/tablet
+  }
+
+  // BUG 9: Too many media queries (performance issue)
+  @media (max-width: 1920px) {
+    padding: 18px;
+  }
+  @media (max-width: 1600px) {
+    padding: 16px;
+  }
+  @media (max-width: 1400px) {
+    padding: 14px;
+  }
+  @media (max-width: 1200px) {
+    padding: 12px;
+  }
+  @media (max-width: 1024px) {
+    padding: 10px;
+  }
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+  @media (max-width: 480px) {
+    padding: 6px;
+  }
+}
+
+// BUG 10: Missing vendor prefixes for browser compatibility
+.gradient-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  // Missing -webkit-, -moz-, -ms- prefixes
+}
